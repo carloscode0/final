@@ -20,6 +20,5 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: 4173,
-    allowedHosts: ["waste-flour-mitchell-reel.trycloudflare.com"], //tunnel --url http://localhost:4173
   },
 });

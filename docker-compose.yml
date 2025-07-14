@@ -1,14 +1,9 @@
-# Etapa 1: construir la app
-FROM node:18 AS build
-WORKDIR /app
-COPY . .
-RUN npm install
-RUN npm run build
+version: "3.8"
 
-# Etapa 2: servir la app
-FROM node:18
-WORKDIR /app
-COPY --from=build /app .
-RUN npm install --omit=dev
-EXPOSE 4173
-CMD ["npm", "run", "preview"]
+services:
+  vue-app:
+    build: .
+    ports:
+      - "4173:4173"
+    environment:
+      - NODE_ENV=production

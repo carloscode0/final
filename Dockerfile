@@ -5,7 +5,7 @@ COPY . .
 RUN npm install
 RUN npm run build
 
-# Etapa 2: servir la app
+# Etapa 2: servir la app con Vite Preview
 FROM node:18
 WORKDIR /app
 COPY --from=build /app .
